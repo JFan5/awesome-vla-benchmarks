@@ -52,6 +52,7 @@ VLA models take visual observations and language instructions as input, and outp
 | **RoboTwin** | 2024 | - | 50 tasks, 5 embodiments | Dual-arm with generative digital twins | [Paper](https://arxiv.org/abs/2409.02920) / [Code](https://github.com/RoboTwin-Platform/RoboTwin) |
 | **DexArt** | 2023 | SAPIEN | Multiple | Dexterous articulated object manipulation | [Paper](https://arxiv.org/abs/2305.05706) / [Code](https://github.com/Kami-code/dexart-release) |
 | **Bi-DexHands** | 2022 | Isaac Gym | Thousands | Bimanual dexterous manipulation | [Paper](https://arxiv.org/abs/2206.08686) / [Code](https://github.com/PKU-MARL/DexterousHands) |
+| **DOMINO** | 2026 | - | 35 tasks, 110K+ trajs | Dynamic manipulation generalization | [Paper](https://arxiv.org/abs/2603.15620) / [Code](https://github.com/H-EmbodVis/DOMINO) |
 
 ## Simulation Benchmarks - Embodied AI / Navigation
 
