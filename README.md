@@ -12,6 +12,7 @@ VLA models take visual observations and language instructions as input, and outp
 
 - [Simulation Benchmarks - Manipulation](#simulation-benchmarks---manipulation)
 - [Simulation Benchmarks - Embodied AI / Navigation](#simulation-benchmarks---embodied-ai--navigation)
+- [Humanoid Benchmarks](#humanoid-benchmarks)
 - [Real-World Datasets & Benchmarks](#real-world-datasets--benchmarks)
 - [Sim-to-Real Evaluation](#sim-to-real-evaluation)
 - [VLA-Specific Evaluation Frameworks](#vla-specific-evaluation-frameworks)
@@ -61,6 +62,19 @@ VLA models take visual observations and language instructions as input, and outp
 | **AI2-THOR / ManipulaTHOR** | 2017 | Unity | 120+ rooms | Navigation + manipulation | [Paper](https://arxiv.org/abs/1712.05474) / [Code](https://github.com/allenai/ai2thor) |
 | **Habitat 2.0** | 2021 | Habitat Sim | Thousands of envs | Navigation + rearrangement | [Paper](https://arxiv.org/abs/2106.14405) / [Site](https://aihabitat.org/) |
 | **EmbodiedBench** | 2025 | Multi-env | 1,128 instances | MLLM-based embodied agents | [Paper](https://arxiv.org/abs/2504.01850) / [Code](https://github.com/EmbodiedBench/EmbodiedBench) |
+
+## Humanoid Benchmarks
+
+| Benchmark | Year | Simulator | Tasks | Key Focus | Links |
+|-----------|------|-----------|-------|-----------|-------|
+| **HumanoidBench** | 2024 | MuJoCo | 27 (15 manip + 12 loco) | Whole-body locomotion & manipulation | [Paper](https://arxiv.org/abs/2403.10506) / [Code](https://github.com/carlosferrazza/humanoid-bench) |
+| **LeVERB** | 2025 | Isaac Lab | 150+ tasks, 10 categories | Vision-language humanoid whole-body control | [Paper](https://arxiv.org/abs/2506.13751) |
+| **Ego Humanoid Manipulation** | 2025 | Isaac Lab | 12 tasks | Egocentric vision humanoid manipulation | [Code](https://github.com/quincy-u/Ego_Humanoid_Manipulation_Benchmark) |
+| **HumanoidGen (HGen-Bench)** | 2025 | SAPIEN | 20 tasks | LLM-driven bimanual dexterous task generation | [Paper](https://arxiv.org/abs/2507.00833) / [Code](https://github.com/TeleHuman/HumanoidGen) |
+| **Humanoid Everyday** | 2025 | Real-world | 260 tasks, 10.3K trajs | Large-scale real humanoid manipulation | [Paper](https://arxiv.org/abs/2510.08807) / [Data](https://huggingface.co/datasets/USC-GVL/humanoid-everyday) |
+| **OmniH2O** | 2024 | Isaac Gym | 6 tasks | Human-to-humanoid teleoperation & autonomy | [Paper](https://arxiv.org/abs/2406.08858) / [Code](https://github.com/LeCAR-Lab/human2humanoid) |
+| **SIMPLE** (Psi-0) | 2026 | MuJoCo + Isaac Sim | 6+ loco-manip tasks | Open humanoid VLA benchmarking simulator | [Paper](https://arxiv.org/abs/2603.12263) / [Code](https://github.com/physical-superintelligence-lab/Psi0) |
+| **Mimicking-Bench** | 2024 | - | 6 tasks, 23K sequences | Human-to-humanoid scene interaction | [Paper](https://arxiv.org/abs/2412.17730) / [Site](https://mimicking-bench.github.io/) |
 
 ## Real-World Datasets & Benchmarks
 
