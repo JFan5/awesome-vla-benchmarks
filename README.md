@@ -126,7 +126,7 @@ VLA models take visual observations and language instructions as input, and outp
 | **LIBERO-Para** | 2026 | LIBERO | Paraphrase robustness (22-52% degradation) | - |
 | **SimX-OR** | 2025 | Plug-in | Observational robustness (blur, noise, etc.) | [Paper](https://arxiv.org/abs/2504.12453) / [Code](https://github.com/LiHaoHN/SimX-OR) |
 | **Eva-VLA** | 2025 | LIBERO | Adversarial physical variations | [Paper](https://arxiv.org/abs/2501.01370) |
-| **VLA-Risk** | 2025 | Multiple | Safety/risk across 296 scenarios | [Paper](https://arxiv.org/abs/2502.09622) |
+| **VLA-Risk** | 2025 | Multiple | Safety/risk across 296 scenarios, 3 dims (object/action/space) x 2 modalities | [OpenReview](https://openreview.net/forum?id=31EjDFwFEe) |
 | **RoboMME** | 2026 | Custom | Memory-augmented VLA evaluation | [Code](https://github.com/RoboMME/robomme_benchmark) |
 | **Safety-CHORES / SafeVLA** | 2025 | AI2-THOR / CHORES | 5 cost categories (corner, blind_spot, fragile, critical, danger) on long-horizon nav+manip; safe RL via CMDP (NeurIPS 2025 Spotlight) | [Paper](https://arxiv.org/abs/2503.03480) / [Code](https://github.com/PKU-Alignment/SafeVLA) / [Site](https://pku-safevla.github.io/) |
 | **RoboCasa-Safety (via OmniGuide)** | 2026 | RoboCasa | Safety-rate protocol (no collision with static furniture) + 3D SDF guidance | [Paper](https://arxiv.org/abs/2603.10052) / [Site](https://omniguide.github.io/) |
