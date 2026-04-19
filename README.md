@@ -54,6 +54,8 @@ VLA models take visual observations and language instructions as input, and outp
 | **DexArt** | 2023 | SAPIEN | Multiple | Dexterous articulated object manipulation | [Paper](https://arxiv.org/abs/2305.05706) / [Code](https://github.com/Kami-code/dexart-release) |
 | **Bi-DexHands** | 2022 | Isaac Gym | Thousands | Bimanual dexterous manipulation | [Paper](https://arxiv.org/abs/2206.08686) / [Code](https://github.com/PKU-MARL/DexterousHands) |
 | **DOMINO** | 2026 | - | 35 tasks, 110K+ trajs | Dynamic manipulation generalization | [Paper](https://arxiv.org/abs/2603.15620) / [Code](https://github.com/H-EmbodVis/DOMINO) |
+| **LiLo-VLA (LIBERO-Long++ / Ultra-Long)** | 2026 | robosuite | 21 tasks | Compositional long-horizon manipulation with object-centric linking | [Paper](https://arxiv.org/abs/2602.21531) |
+| **InstructVLA** | 2026 | - | Instruction-tuning suite | Instruction tuning from understanding to manipulation (ICLR 2026) | [Code](https://github.com/InternRobotics/InstructVLA) |
 
 ## Simulation Benchmarks - Embodied AI / Navigation
 
@@ -112,6 +114,7 @@ VLA models take visual observations and language instructions as input, and outp
 | **LADEV** | 2024 | Language-driven eval | Auto-generated scenes from NL descriptions | [Paper](https://arxiv.org/abs/2410.05613) |
 | **ManipBench** | 2025 | MCQ-based | VLM reasoning for low-level manipulation | [Paper](https://arxiv.org/abs/2504.02452) / [Site](https://manipbench.github.io/) |
 | **RoboBench** | 2025 | MCQ/VQA-based | MLLM as embodied brain, 5 cognitive dims | [Paper](https://arxiv.org/abs/2503.19827) / [Site](https://robo-bench.github.io/) |
+| **Eval-Actions + AutoEval** | 2026 | Automated eval | Trustworthy evaluation protocol for robotic manipulation | [Paper](https://arxiv.org/abs/2601.18723) |
 
 ## Robustness & Safety Benchmarks
 
@@ -125,6 +128,10 @@ VLA models take visual observations and language instructions as input, and outp
 | **Eva-VLA** | 2025 | LIBERO | Adversarial physical variations | [Paper](https://arxiv.org/abs/2501.01370) |
 | **VLA-Risk** | 2025 | Multiple | Safety/risk across 296 scenarios | [Paper](https://arxiv.org/abs/2502.09622) |
 | **RoboMME** | 2026 | Custom | Memory-augmented VLA evaluation | [Code](https://github.com/RoboMME/robomme_benchmark) |
+| **Safety-CHORES / SafeVLA** | 2025 | AI2-THOR / CHORES | 5 cost categories (corner, blind_spot, fragile, critical, danger) on long-horizon nav+manip; safe RL via CMDP (NeurIPS 2025 Spotlight) | [Paper](https://arxiv.org/abs/2503.03480) / [Code](https://github.com/PKU-Alignment/SafeVLA) / [Site](https://pku-safevla.github.io/) |
+| **RoboCasa-Safety (via OmniGuide)** | 2026 | RoboCasa | Safety-rate protocol (no collision with static furniture) + 3D SDF guidance | [Paper](https://arxiv.org/abs/2603.10052) / [Site](https://omniguide.github.io/) |
+| **Linguistic Red-Team** | 2026 | Multiple | Diversity-aware adversarial instructions (SR 93% → 5.85%) | [Paper](https://arxiv.org/abs/2604.05595) |
+| **VLSA / AEGIS** | 2026 | Plug-in | Plug-and-play CBF safety-constraint layer with theoretical guarantees | [Paper](https://arxiv.org/abs/2512.11891) |
 
 ## Unified Platforms
 
