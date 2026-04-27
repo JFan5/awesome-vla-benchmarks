@@ -10,6 +10,7 @@ VLA models take visual observations and language instructions as input, and outp
 
 ## Table of Contents
 
+- [Awesome VLA Models](#awesome-vla-models)
 - [Simulation Benchmarks - Manipulation](#simulation-benchmarks---manipulation)
 - [Simulation Benchmarks - Embodied AI / Navigation](#simulation-benchmarks---embodied-ai--navigation)
 - [Humanoid Benchmarks](#humanoid-benchmarks)
@@ -20,6 +21,48 @@ VLA models take visual observations and language instructions as input, and outp
 - [Unified Platforms](#unified-platforms)
 - [Survey Papers](#survey-papers)
 - [Related Awesome Lists](#related-awesome-lists)
+
+---
+
+## Awesome VLA Models
+
+A chronological list of published Vision-Language-Action models.
+
+- **VLM Backbone**: the pretrained vision-language model the VLA was built on (or "from-scratch" if none).
+- **Action Head**: how continuous robot actions are produced — discrete tokens, diffusion, flow matching, etc.
+- **Open**: ✓ if weights/code are publicly released; ◐ if partial (code only / weights restricted); ✗ if closed.
+
+| Model | Date | Org | VLM Backbone | Action Head | Params | Open | Links |
+|-------|------|-----|--------------|-------------|--------|------|-------|
+| **RT-1** | 2022-12 | Google | EfficientNet + Universal Sentence Encoder | Discrete action tokens (Transformer) | 35M | ✓ | [Paper](https://arxiv.org/abs/2212.06817) / [Code](https://github.com/google-research/robotics_transformer) |
+| **PaLM-E** | 2023-03 | Google | PaLM + ViT | LLM-driven planning (text actions) | up to 562B | ✗ | [Paper](https://arxiv.org/abs/2303.03378) / [Site](https://palm-e.github.io/) |
+| **RT-2** | 2023-07 | Google DeepMind | PaLI-X / PaLM-E | Discrete action tokens (co-fine-tuned with web data) | 5B / 55B | ✗ | [Paper](https://arxiv.org/abs/2307.15818) / [Site](https://robotics-transformer2.github.io/) |
+| **RT-2-X / RT-X** | 2023-10 | Open X-Embodiment collab | PaLI-X | Discrete action tokens, cross-embodiment | 55B | ✗ | [Paper](https://arxiv.org/abs/2310.08864) / [Site](https://robotics-transformer-x.github.io/) |
+| **RoboFlamingo** | 2023-11 | ByteDance / Berkeley | OpenFlamingo | LSTM action head | ~3B | ✓ | [Paper](https://arxiv.org/abs/2311.01378) / [Code](https://github.com/RoboFlamingo/RoboFlamingo) |
+| **3D-VLA** | 2024-03 | UMass / MIT | 3D-LLM | Generative 3D goal + action | — | ✓ | [Paper](https://arxiv.org/abs/2403.09631) / [Code](https://github.com/UMass-Foundation-Model/3D-VLA) |
+| **Octo** | 2024-05 | UC Berkeley / Stanford | Transformer (from-scratch) | Diffusion head | 27M / 93M | ✓ | [Paper](https://arxiv.org/abs/2405.12213) / [Code](https://github.com/octo-models/octo) |
+| **OpenVLA** | 2024-06 | Stanford / UC Berkeley | Llama-2-7B + DINOv2 + SigLIP | Discrete action tokens (autoregressive) | 7B | ✓ | [Paper](https://arxiv.org/abs/2406.09246) / [Code](https://github.com/openvla/openvla) |
+| **TinyVLA** | 2024-09 | Midea / ECNU | Small VLM (Pythia-based) | Diffusion head | <1B | ✓ | [Paper](https://arxiv.org/abs/2409.12514) / [Site](https://tiny-vla.github.io/) |
+| **RDT-1B** | 2024-10 | Tsinghua AIR | SigLIP + T5-XXL | Diffusion Transformer | 1B | ✓ | [Paper](https://arxiv.org/abs/2410.07864) / [Code](https://github.com/thu-ml/RoboticsDiffusionTransformer) |
+| **π0 (Pi-Zero)** | 2024-10 | Physical Intelligence | PaliGemma | Flow-matching action expert | 3B | ✓ | [Paper](https://arxiv.org/abs/2410.24164) / [Code](https://github.com/Physical-Intelligence/openpi) |
+| **CogACT** | 2024-11 | Microsoft Research Asia | OpenVLA-style (DINOv2+SigLIP+Llama2) | DiT action expert (decoupled cognition/action) | 7B+ | ✓ | [Paper](https://arxiv.org/abs/2411.19650) / [Code](https://github.com/microsoft/CogACT) |
+| **π0-FAST** | 2025-01 | Physical Intelligence | PaliGemma | FAST (DCT) action tokens | 3B | ✓ | [Paper](https://arxiv.org/abs/2501.09747) / [Site](https://www.physicalintelligence.company/research/fast) |
+| **SpatialVLA** | 2025-01 | Shanghai AI Lab et al. | PaliGemma2 | Ego3D position-aware action tokens | 4B | ✓ | [Paper](https://arxiv.org/abs/2501.15830) / [Code](https://github.com/SpatialVLA/SpatialVLA) |
+| **DexVLA** | 2025-02 | Midea | Qwen2-VL | Diffusion action expert (dexterous) | 1B+ | ✓ | [Paper](https://arxiv.org/abs/2502.05855) / [Site](https://dex-vla.github.io/) |
+| **Magma** | 2025-02 | Microsoft | LLaVA-style | Set-of-marks + action traces | 8B | ✓ | [Paper](https://arxiv.org/abs/2502.13130) / [Code](https://github.com/microsoft/Magma) |
+| **Helix** | 2025-02 | Figure AI | S2 (VLM, ~7B) + S1 (80M visuomotor) | Dual-system, S1 runs at 200Hz | ~7B (S2) | ✗ | [Site](https://www.figure.ai/news/helix) |
+| **Hi Robot** | 2025-02 | Physical Intelligence | π0 backbone + high-level VLM | Hierarchical (instruction → action) | 3B | ✗ | [Paper](https://arxiv.org/abs/2502.19417) / [Site](https://www.physicalintelligence.company/research/hirobot) |
+| **OpenVLA-OFT** | 2025-02 | Stanford | OpenVLA | Parallel decoding + continuous actions + L1 regression | 7B | ✓ | [Paper](https://arxiv.org/abs/2502.19645) / [Code](https://github.com/moojink/openvla-oft) |
+| **GR00T N1** | 2025-03 | NVIDIA | Eagle-2 VLM | DiT action head (System 1+2 design) | 2B | ✓ | [Paper](https://arxiv.org/abs/2503.14734) / [Code](https://github.com/NVIDIA/Isaac-GR00T) |
+| **Gemini Robotics** | 2025-03 | Google DeepMind | Gemini 2.0 | Action decoder (closed) | — | ✗ | [Paper](https://arxiv.org/abs/2503.20020) / [Site](https://deepmind.google/discover/blog/gemini-robotics-brings-ai-into-the-physical-world/) |
+| **GO-1** | 2025-03 | AgiBot | InternVL backbone | Latent planner + action expert (ViLLA) | — | ◐ | [Site](https://agibot-world.com/blog/go1) / [Code](https://github.com/OpenDriveLab/AgiBot-World) |
+| **π0.5** | 2025-04 | Physical Intelligence | π0 + open-world co-training | Flow matching, generalizes to unseen homes | 3B | ✗ | [Paper](https://arxiv.org/abs/2504.16054) / [Site](https://www.physicalintelligence.company/blog/pi05) |
+| **NORA** | 2025-04 | SUTD | Qwen2.5-VL | FAST tokens | 3B | ✓ | [Paper](https://arxiv.org/abs/2504.19854) / [Code](https://github.com/declare-lab/nora) |
+| **SmolVLA** | 2025-06 | Hugging Face | SmolVLM-2 | Flow matching action expert | 450M | ✓ | [Paper](https://arxiv.org/abs/2506.01844) / [Code](https://github.com/huggingface/lerobot) |
+| **GR00T N1.5** | 2025-06 | NVIDIA | Eagle-2 VLM | DiT action head (improved post-training) | 2B | ✓ | [Code](https://github.com/NVIDIA/Isaac-GR00T) |
+| **WorldVLA** | 2025-06 | Alibaba DAMO | Chameleon | Unified world-model + action autoregression | 7B | ✓ | [Paper](https://arxiv.org/abs/2506.21539) / [Code](https://github.com/alibaba-damo-academy/WorldVLA) |
+| **Gemini Robotics On-Device** | 2025-06 | Google DeepMind | Gemini Nano family | On-device action decoder | — | ✗ | [Site](https://deepmind.google/discover/blog/gemini-robotics-on-device-brings-ai-to-local-robotic-devices/) |
+| **MolmoAct** | 2025-08 | Allen AI (AI2) | Molmo VLM | Action reasoning + chunked action tokens | 7B | ✓ | [Paper](https://arxiv.org/abs/2508.07917) / [Code](https://github.com/allenai/MolmoAct) |
 
 ---
 
