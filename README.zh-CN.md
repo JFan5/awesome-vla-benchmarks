@@ -37,11 +37,22 @@ VLA 模型以视觉观测和语言指令为输入，并输出机器人动作。�
 
 | 模型 | 日期 | 机构 | VLM 骨干 | 动作头 | 参数量 | 开放 | 链接 |
 |------|------|------|----------|--------|--------|------|------|
+| **τ0-VLA** | 2026-08 | SII Research | 视觉语言骨干 + Mixture-of-Transformers | 分层规划 + 世界模型引导的测试时计算 | - | ✓ | [Paper](https://arxiv.org/abs/2608.16885) / [Code](https://github.com/sii-research/tau-0-vla) |
+| **TurboVLA** | 2026-07 | H-EmbodVis | 视觉/语言独立编码（V+L→A） | 轻量解码器；RTX 4090 上 32 Hz、显存 <1 GB | 0.2B | ✓ | [Paper](https://arxiv.org/abs/2607.27205) / [Code](https://github.com/H-EmbodVis/TurboVLA) |
+| **LingBot-VLA 2.0** | 2026-07 | Ant Group / Robbyant | Qwen3-VL-4B-Instruct | MoE 动作专家，55 维统一动作空间 | 6B | ✓ | [Code](https://github.com/Robbyant/lingbot-vla-v2) |
+| **Wall-OSS-0.5** | 2026-05 | X Square Robot | 3B VLM | 梯度桥接协同训练（离散 + flow matching） | 4B | ✓ | [Paper](https://arxiv.org/abs/2605.30877) / [Code](https://github.com/X-Square-Robot/wall-x) |
+| **A1** | 2026-04 | - | 带隐式 affordance 先验的预训练 VLM | 层间截断 flow matching（可提前退出） | - | ✓ | [Paper](https://arxiv.org/abs/2604.05672) |
 | **AR-VLA** | 2026-03 | INSAIT / KU Leuven | 模块化 VLA 感知骨干 | 自回归连续动作专家 | - | ✓ | [Paper](https://arxiv.org/abs/2603.10126) / [Site](https://arvla.insait.ai/) |
+| **Ψ₀ (Psi-0)** | 2026-03 | Physical Superintelligence Lab | 解耦式人类视频预训练 | 人形机器人 loco-manipulation 后训练 | - | ✓ | [Paper](https://arxiv.org/abs/2603.12263) / [Code](https://github.com/physical-superintelligence-lab/Psi0) |
+| **Xiaomi-Robotics-0** | 2026-02 | 小米 | 跨 embodiment 预训练 VLM | 带时间步对齐的异步执行 | - | ✓ | [Paper](https://arxiv.org/abs/2602.12684) / [Site](https://xiaomi-robotics-0.github.io/) |
 | **LAP-3B** | 2026-02 | Princeton / Physical Intelligence | Large VLM | Language-action 预训练 | 3B | ✓ | [Paper](https://arxiv.org/abs/2602.10556) / [Site](https://lap-vla.github.io/) |
 | **LingBot-VLA** | 2026-01 | Ant Group / Robbyant | Qwen2.5-VL + depth features | 双臂动作解码器 | 4B | ✓ | [Paper](https://arxiv.org/abs/2601.18692) / [Code](https://github.com/Robbyant/lingbot-vla) |
+| **InternVLA-A1** | 2026-01 | 上海 AI Lab (InternRobotics) | Qwen3.5-2B | 通过共享全注意力层接入的统一动作专家 | - | ✓ | [Paper](https://arxiv.org/abs/2601.02456) / [Code](https://github.com/InternRobotics/InternVLA-A1) |
 | **ACoT-VLA** | 2026-01 | AgiBot | 预训练 VLM 骨干 | Action Chain-of-Thought + flow matching | - | ✓ | [Paper](https://arxiv.org/abs/2601.11404) / [Code](https://github.com/AgibotTech/ACoT-VLA) |
 | **Green-VLA** | 2026-01 | Sber Robotics Center | GreenVLA 2B / 5B | 分阶段多 embodiment 策略 + RL 对齐 | 2B / 5B | ✓ | [Paper](https://arxiv.org/abs/2602.00919) / [Code](https://github.com/greenvla/GreenVLA) |
+| **InternVLA-M1** | 2025-10 | 上海 AI Lab (InternRobotics) | 空间 grounding 预训练 VLM | 空间引导的动作后训练 | - | ✓ | [Paper](https://arxiv.org/abs/2510.13778) / [Code](https://github.com/InternRobotics/InternVLA-M1) |
+| **Galaxea G0** | 2025-09 | Galaxea | 双系统：VLM 规划器 + VLA 执行器 | 三阶段课程（跨 embodiment → 单 embodiment → 任务专用） | - | ✓ | [Paper](https://arxiv.org/abs/2509.00576) / [Code](https://github.com/OpenGalaxea/GalaxeaVLA) |
+| **EO-1** | 2025-08 | EO-Robotics / IPEC | 交错式视觉-文本-动作预训练 | 自回归解码 + flow matching 去噪 | 3B | ✓ | [Paper](https://arxiv.org/abs/2508.21112) / [Code](https://github.com/IPEC-PUBLIC/EO-1) |
 | **MolmoAct** | 2025-08 | Allen AI (AI2) | Molmo VLM | 动作推理 + 分块动作 token | 7B | ✓ | [Paper](https://arxiv.org/abs/2508.07917) / [Code](https://github.com/allenai/MolmoAct) |
 | **WorldVLA** | 2025-06 | Alibaba DAMO | Chameleon | 统一世界模型 + 动作自回归 | 7B | ✓ | [Paper](https://arxiv.org/abs/2506.21539) / [Code](https://github.com/alibaba-damo-academy/WorldVLA) |
 | **GR00T N1.5** | 2025-06 | NVIDIA | Eagle-2 VLM | DiT 动作头（改进后训练） | 2B | ✓ | [Code](https://github.com/NVIDIA/Isaac-GR00T) |
@@ -66,11 +77,16 @@ VLA 模型以视觉观测和语言指令为输入，并输出机器人动作。�
 | **GO-1** | 2025-03 | AgiBot | InternVL backbone | 潜变量规划器 + 动作专家 (ViLLA) | - | ◐ | [Site](https://agibot-world.com/blog/go1) / [Code](https://github.com/OpenDriveLab/AgiBot-World) |
 | **ProgVLA** | 2026-05 | Samsung / KU Leuven | 紧凑多模态编码器 | 进度感知 flow matching + RL heads | 0.1B | ✗ | [Paper](https://arxiv.org/abs/2605.28231) |
 | **X-DiffVLA** | 2026-05 | Peking Univ. et al. | VLA backbone | 跨 embodiment 扩散动作头 | - | ✗ | [Paper](https://arxiv.org/abs/2605.25044) |
+| **π0.7** | 2026-04 | Physical Intelligence | π 系列骨干 | Flow matching + 多样化上下文条件（可 steer） | - | ✗ | [Paper](https://arxiv.org/abs/2604.15483) / [Site](https://www.pi.website/blog/pi07) |
 | **HEX** | 2026-04 | Tsinghua / Huawei et al. | VLM + 本体感知专家 | Flow matching 全身动作头 | - | ✗ | [Paper](https://arxiv.org/abs/2604.07993) |
+| **GR00T N2** | 2026-03 | NVIDIA | 世界动作模型（GR00T N1 之后的新架构） | 视频与动作 token 联合去噪（world-action 范式） | - | ✗ | [Site](https://nvidianews.nvidia.com/news/nvidia-and-global-robotics-leaders-take-physical-ai-to-the-real-world) |
 | **MMaDA-VLA** | 2026-03 | DAMO / Zhejiang Univ. et al. | MMaDA 扩散骨干 | 面向语言/图像/动作 token 的原生离散扩散 | - | ✗ | [Paper](https://arxiv.org/abs/2603.25406) |
 | **DAM-VLA** | 2026-03 | Yonsei Univ. et al. | VLM 推理模块 | 路由式动态扩散动作模型 | - | ✗ | [Paper](https://arxiv.org/abs/2603.00926) |
+| **π*0.6 (Pi-Star 0.6)** | 2025-11 | Physical Intelligence | π0.6 骨干 | RECAP：结合经验与人工纠正的优势条件 RL | - | ✗ | [Paper](https://arxiv.org/abs/2511.14759) / [Site](https://www.pi.website/blog/pistar06) |
 | **X-VLA** | 2025-10 | Tsinghua AIR et al. | Soft-prompted Transformer | Flow matching 跨 embodiment 动作头 | 0.9B | ✗ | [Paper](https://arxiv.org/abs/2510.10274) / [Site](https://thu-air-dream.github.io/X-VLA/) |
+| **Gemini Robotics 1.5 / ER 1.5** | 2025-09 | Google DeepMind | Gemini | 会「思考」的 VLA + 具身推理规划器，支持跨 embodiment（ER 1.5 开放 API） | - | ✗ | [Site](https://deepmind.google/blog/gemini-robotics-15-brings-ai-agents-into-the-physical-world/) |
 | **Discrete Diffusion VLA** | 2025-08 | Shanghai AI Lab et al. | Single Transformer VLM | 离散扩散动作解码器 | - | ✗ | [Paper](https://arxiv.org/abs/2508.20072) |
+| **GR-3** | 2025-07 | ByteDance Seed | Mixture-of-Transformers（视觉语言 + 动作模块） | 端到端动作生成，与网页视觉语言数据联合训练 | 4B | ✗ | [Paper](https://arxiv.org/abs/2507.15493) / [Site](https://seed.bytedance.com/en/blog/seed-research-gr-3-released-a-generalist-robot-model-for-generalization-long-horizon-tasks-and-bi-manual-deformable-object-manipulation) |
 | **Gemini Robotics On-Device** | 2025-06 | Google DeepMind | Gemini Nano family | 端侧动作解码器 | - | ✗ | [Site](https://deepmind.google/discover/blog/gemini-robotics-on-device-brings-ai-to-local-robotic-devices/) |
 | **π0.5** | 2025-04 | Physical Intelligence | π0 + open-world co-training | Flow matching，泛化到未见过的家庭环境 | 3B | ✗ | [Paper](https://arxiv.org/abs/2504.16054) / [Site](https://www.physicalintelligence.company/blog/pi05) |
 | **Gemini Robotics** | 2025-03 | Google DeepMind | Gemini 2.0 | 动作解码器（闭源） | - | ✗ | [Paper](https://arxiv.org/abs/2503.20020) / [Site](https://deepmind.google/discover/blog/gemini-robotics-brings-ai-into-the-physical-world/) |
@@ -87,6 +103,10 @@ VLA 模型以视觉观测和语言指令为输入，并输出机器人动作。�
 
 | 基准 | 年份 | 仿真器 | 任务 | 关注重点 | 链接 |
 |------|------|--------|------|----------|------|
+| **ReflexBench** | 2026 | - | Reaction-critical tasks | 动态扰动下的快速/预测式操作 | [Paper](https://arxiv.org/abs/2608.14379) |
+| **RoboDojo** | 2026 | Isaac Sim | 42 sim + 18 real tasks | 仿真与真机统一评测；泛化、记忆、精度、长时程、开放词汇指令；含 30 个策略的排行榜 | [Paper](https://arxiv.org/abs/2607.04434) / [Code](https://github.com/RoboDojo-Benchmark/RoboDojo) / [Site](https://robodojo-benchmark.com/) |
+| **EBench** | 2026 | Isaac Sim | 26 tasks | 要素化诊断：5 个能力维度 x 4 个泛化维度 | [Paper](https://arxiv.org/abs/2606.18239) / [Code](https://github.com/InternRobotics/EBench) |
+| **MolmoSpaces** | 2026 | 仿真器无关（MuJoCo / Isaac / ManiSkill） | 230K+ 场景、130K 资产、48K 可操作物体 | 大规模开放生态 + 公开排行榜，sim-to-real 相关性强 | [Paper](https://arxiv.org/abs/2602.11337) / [Site](https://allenai.github.io/molmospaces/) / [Leaderboard](https://molmospaces.allen.ai/leaderboard) |
 | **DOMINO** | 2026 | - | 35 tasks, 110K+ trajs | 动态操作泛化 | [Paper](https://arxiv.org/abs/2603.15620) / [Code](https://github.com/H-EmbodVis/DOMINO) |
 | **LiLo-VLA (LIBERO-Long++ / Ultra-Long)** | 2026 | robosuite | 21 tasks | 基于物体中心链接的组合式长时程操作 | [Paper](https://arxiv.org/abs/2602.21531) |
 | **InstructVLA** | 2026 | - | Instruction-tuning suite | 从理解到操作的指令微调套件（ICLR 2026） | [Code](https://github.com/InternRobotics/InstructVLA) |
@@ -100,6 +120,7 @@ VLA 模型以视觉观测和语言指令为输入，并输出机器人动作。�
 | **ClevrSkills** | 2024 | ManiSkill2 | 33 tasks, 330K trajs | 组合式推理 | [Paper](https://arxiv.org/abs/2404.09187) |
 | **RoboCasa** | 2024 | robosuite | 100-365 tasks | 厨房任务，通用机器人 | [Paper](https://arxiv.org/abs/2406.02523) / [Code](https://github.com/robocasa/robocasa) |
 | **BiGym** | 2024 | MuJoCo | 40 tasks | 双臂移动操作 | [Paper](https://arxiv.org/abs/2407.07788) / [Code](https://github.com/chernyadev/bigym) |
+| **RoboTwin 2.0** | 2025 | - | 50 个双臂任务、5 种 embodiment、731 个物体 | 可扩展数据生成器 + 基准，5 个维度的域随机化 | [Paper](https://arxiv.org/abs/2506.18088) / [Code](https://github.com/RoboTwin-Platform/RoboTwin) |
 | **RoboTwin** | 2024 | - | 50 tasks, 5 embodiments | 生成式数字孪生中的双臂任务 | [Paper](https://arxiv.org/abs/2409.02920) / [Code](https://github.com/RoboTwin-Platform/RoboTwin) |
 | **LIBERO** | 2023 | robosuite | 130 tasks, 4 suites | 终身学习、知识迁移 | [Paper](https://arxiv.org/abs/2306.03310) / [Code](https://github.com/Lifelong-Robot-Learning/LIBERO) |
 | **VIMA** | 2023 | PyBullet | 17 task types, 600K+ trajs | 多模态 prompt 条件任务 | [Paper](https://arxiv.org/abs/2210.03094) / [Code](https://github.com/vimalabs/VimaBench) |
@@ -131,7 +152,8 @@ VLA 模型以视觉观测和语言指令为输入，并输出机器人动作。�
 
 | 基准 | 年份 | 仿真器 | 任务 | 关注重点 | 链接 |
 |------|------|--------|------|----------|------|
-| **SIMPLE** (Psi-0) | 2026 | MuJoCo + Isaac Sim | 6+ loco-manip tasks | 开放的人形机器人 VLA 基准仿真器 | [Paper](https://arxiv.org/abs/2603.12263) / [Code](https://github.com/physical-superintelligence-lab/Psi0) |
+| **SIMPLE** | 2026 | MuJoCo + Isaac Sim | 60 个全身任务、50 个室内场景、1000+ 物体 | 人形机器人 loco-manipulation 的策略学习与评测；覆盖 IL、VLA 与世界动作模型，支持零样本 sim-to-real | [Paper](https://arxiv.org/abs/2606.08278) |
+| **WOLF-VLA** | 2026 | - | 指令驱动的运动任务套件 | 动力学一致的人形全身运动 VLA 基准 | [Paper](https://arxiv.org/abs/2606.25591) |
 | **LeVERB** | 2025 | Isaac Lab | 150+ tasks, 10 categories | 视觉语言人形机器人全身控制 | [Paper](https://arxiv.org/abs/2506.13751) |
 | **Ego Humanoid Manipulation** | 2025 | Isaac Lab | 12 tasks | 第一视角人形机器人操作 | [Code](https://github.com/quincy-u/Ego_Humanoid_Manipulation_Benchmark) |
 | **HumanoidGen (HGen-Bench)** | 2025 | SAPIEN | 20 tasks | LLM 驱动的双臂灵巧任务生成 | [Paper](https://arxiv.org/abs/2507.00833) / [Code](https://github.com/TeleHuman/HumanoidGen) |
@@ -163,6 +185,8 @@ VLA 模型以视觉观测和语言指令为输入，并输出机器人动作。�
 
 | 基准 | 年份 | 方法 | 关注重点 | 链接 |
 |------|------|------|----------|------|
+| **ArmnetBench v0.1** | 2026 | 低成本真机机械臂集群 | 并行真机策略评测 | [Paper](https://arxiv.org/abs/2607.24481) |
+| **VLA-REPLICA** | 2026 | 可复现真机平台 | 全部使用现成硬件，覆盖分布内与分布外评测，可在各实验室复制 | [Paper](https://arxiv.org/abs/2605.20774) |
 | **REALM** | 2025 | Real-validated sim | 15 个扰动因素，与真实结果显著相关（p<0.001） | [Paper](https://arxiv.org/abs/2502.02538) / [Code](https://github.com/martin-sedlacek/REALM) |
 | **RobotArena Infinity** | 2025 | Real-to-sim translation | VLM 评分 + 人类偏好 | [Paper](https://arxiv.org/abs/2504.04603) / [Site](https://robotarenainf.github.io/) |
 | **RoboArena** | 2025 | Distributed real eval | 众包式 ELO 排名评测 | [Paper](https://arxiv.org/abs/2504.08659) |
@@ -186,12 +210,15 @@ VLA 模型以视觉观测和语言指令为输入，并输出机器人动作。�
 
 | 基准 | 年份 | 扩展自 | 关注重点 | 链接 |
 |------|------|--------|----------|------|
+| **ReaLM (Red-Teaming)** | 2026 | 物理世界 VLM | 统一红队评测：12 种攻击方法、3 种防御、13 个 VLM | [Paper](https://arxiv.org/abs/2606.23892) |
+| **RedVLA** | 2026 | Multiple | 在真机 VLA 上做物理红队测试，6 个 VLA 上攻击成功率最高 95.5% | [Paper](https://arxiv.org/abs/2604.22591) |
 | **LIBERO-X** | 2026 | LIBERO | 分层鲁棒性 litmus test | - |
 | **LIBERO-Para** | 2026 | LIBERO | 释义鲁棒性（22-52% 性能下降） | - |
 | **RoboMME** | 2026 | Custom | 记忆增强 VLA 评测 | [Code](https://github.com/RoboMME/robomme_benchmark) |
 | **RoboCasa-Safety (via OmniGuide)** | 2026 | RoboCasa | 安全率协议（不与静态家具碰撞）+ 3D SDF 引导 | [Paper](https://arxiv.org/abs/2603.10052) / [Site](https://omniguide.github.io/) |
 | **Linguistic Red-Team** | 2026 | Multiple | 多样性感知对抗指令（SR 93% → 5.85%） | [Paper](https://arxiv.org/abs/2604.05595) |
 | **VLSA / AEGIS** | 2026 | Plug-in | 即插即用 CBF 安全约束层，带理论保证 | [Paper](https://arxiv.org/abs/2512.11891) |
+| **AttackVLA** | 2025 | Multiple | 覆盖 VLA 全生命周期的对抗与后门攻击评测，提出 BackdoorVLA | [Paper](https://arxiv.org/abs/2511.12149) |
 | **LIBERO-PRO** | 2025 | LIBERO | 4 维扰动下的鲁棒性 | [Paper](https://arxiv.org/abs/2502.18985) / [Code](https://github.com/Zxy-MLlab/LIBERO-PRO) |
 | **LIBERO-Plus** | 2025 | LIBERO | 7 个维度 x 5 个等级的鲁棒性分析 | [Paper](https://arxiv.org/abs/2503.16064) / [Code](https://github.com/sylvestf/LIBERO-plus) |
 | **SimX-OR** | 2025 | Plug-in | 观测鲁棒性（模糊、噪声等） | [Paper](https://arxiv.org/abs/2504.12453) / [Code](https://github.com/LiHaoHN/SimX-OR) |
@@ -204,6 +231,7 @@ VLA 模型以视觉观测和语言指令为输入，并输出机器人动作。�
 
 | 平台 | 年份 | 关注重点 | 链接 |
 |------|------|----------|------|
+| **StarVLA** | 2026 | 乐高式代码库，打通 LIBERO、SimplerEnv、RoboTwin 2.0、RoboCasa GR1、BEHAVIOR-1K | [Paper](https://arxiv.org/abs/2604.05014) |
 | **RoboVerse** | 2025 | 跨仿真器统一平台（MetaSim） | [Paper](https://arxiv.org/abs/2504.09837) / [Code](https://github.com/RoboVerseOrg/RoboVerse) |
 | **STAR-Gen** | 2025 | 泛化分类法（视觉、语义、行为） | [Paper](https://arxiv.org/abs/2503.11106) / [Site](https://stargen-taxonomy.github.io/) |
 
@@ -216,6 +244,11 @@ VLA 模型以视觉观测和语言指令为输入，并输出机器人动作。�
 - **"A Survey on Efficient Vision-Language-Action Models"** - [Paper](https://arxiv.org/abs/2510.24795) / [Site](https://evla-survey.github.io/)
 - **"A Survey on Vision-Language-Action Models: An Action Tokenization Perspective"** - [Paper](https://arxiv.org/abs/2507.01925)
 - **"Benchmarking the Generality of Vision-Language-Action Models"** - [Paper](https://arxiv.org/abs/2512.11315)
+- **"Vision-Language-Action in Robotics: A Survey of Datasets, Benchmarks, and Data Engines"** - [Paper](https://arxiv.org/abs/2604.23001)
+- **"Vision-Language-Action Safety: Threats, Challenges, Evaluations, and Mechanisms"** - [Paper](https://arxiv.org/abs/2604.23775)
+- **"Safety in Embodied AI: A Survey of Risks, Attacks, and Defenses"** - [Paper](https://arxiv.org/abs/2605.02900)
+- **"Efficient Vision-Language-Action Models for Embodied Manipulation: A Systematic Survey"** - [Paper](https://arxiv.org/abs/2510.17111)
+- **"An Anatomy of Vision-Language-Action Models: From Modules to Milestones and Challenges"** - [Paper](https://arxiv.org/abs/2512.11362)
 
 <a id="related-awesome-lists"></a>
 ## 相关 Awesome 列表

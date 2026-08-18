@@ -36,11 +36,22 @@ A list of published Vision-Language-Action models, grouped by openness first (�
 
 | Model | Date | Org | VLM Backbone | Action Head | Params | Open | Links |
 |-------|------|-----|--------------|-------------|--------|------|-------|
+| **τ0-VLA** | 2026-08 | SII Research | Vision-language backbone + Mixture-of-Transformers | Hierarchical planner + world-model-guided test-time computation | — | ✓ | [Paper](https://arxiv.org/abs/2608.16885) / [Code](https://github.com/sii-research/tau-0-vla) |
+| **TurboVLA** | 2026-07 | H-EmbodVis | Independent vision/language encoders (V+L→A) | Compact decoder; 32 Hz, <1 GB VRAM on RTX 4090 | 0.2B | ✓ | [Paper](https://arxiv.org/abs/2607.27205) / [Code](https://github.com/H-EmbodVis/TurboVLA) |
+| **LingBot-VLA 2.0** | 2026-07 | Ant Group / Robbyant | Qwen3-VL-4B-Instruct | MoE action expert, 55-D unified action space | 6B | ✓ | [Code](https://github.com/Robbyant/lingbot-vla-v2) |
+| **Wall-OSS-0.5** | 2026-05 | X Square Robot | 3B VLM | Gradient-bridged co-training (discrete + flow matching) | 4B | ✓ | [Paper](https://arxiv.org/abs/2605.30877) / [Code](https://github.com/X-Square-Robot/wall-x) |
+| **A1** | 2026-04 | — | Pretrained VLM with implicit affordance priors | Inter-layer truncated flow matching (early exit) | — | ✓ | [Paper](https://arxiv.org/abs/2604.05672) |
 | **AR-VLA** | 2026-03 | INSAIT / KU Leuven | Modular VLA perception backbone | Autoregressive continuous action expert | — | ✓ | [Paper](https://arxiv.org/abs/2603.10126) / [Site](https://arvla.insait.ai/) |
+| **Ψ₀ (Psi-0)** | 2026-03 | Physical Superintelligence Lab | Decoupled human-video pretraining | Humanoid loco-manipulation post-training | — | ✓ | [Paper](https://arxiv.org/abs/2603.12263) / [Code](https://github.com/physical-superintelligence-lab/Psi0) |
+| **Xiaomi-Robotics-0** | 2026-02 | Xiaomi | Cross-embodiment pretrained VLM | Asynchronous execution with timestep alignment | — | ✓ | [Paper](https://arxiv.org/abs/2602.12684) / [Site](https://xiaomi-robotics-0.github.io/) |
 | **LAP-3B** | 2026-02 | Princeton / Physical Intelligence | Large VLM | Language-action pretraining | 3B | ✓ | [Paper](https://arxiv.org/abs/2602.10556) / [Site](https://lap-vla.github.io/) |
 | **LingBot-VLA** | 2026-01 | Ant Group / Robbyant | Qwen2.5-VL + depth features | Dual-arm action decoder | 4B | ✓ | [Paper](https://arxiv.org/abs/2601.18692) / [Code](https://github.com/Robbyant/lingbot-vla) |
+| **InternVLA-A1** | 2026-01 | Shanghai AI Lab (InternRobotics) | Qwen3.5-2B | Unified action expert via shared full-attention layers | — | ✓ | [Paper](https://arxiv.org/abs/2601.02456) / [Code](https://github.com/InternRobotics/InternVLA-A1) |
 | **ACoT-VLA** | 2026-01 | AgiBot | Pretrained VLM backbone | Action Chain-of-Thought + flow matching | — | ✓ | [Paper](https://arxiv.org/abs/2601.11404) / [Code](https://github.com/AgibotTech/ACoT-VLA) |
 | **Green-VLA** | 2026-01 | Sber Robotics Center | GreenVLA 2B / 5B | Staged multi-embodiment policy + RL alignment | 2B / 5B | ✓ | [Paper](https://arxiv.org/abs/2602.00919) / [Code](https://github.com/greenvla/GreenVLA) |
+| **InternVLA-M1** | 2025-10 | Shanghai AI Lab (InternRobotics) | Spatial-grounding pretrained VLM | Spatially guided action post-training | — | ✓ | [Paper](https://arxiv.org/abs/2510.13778) / [Code](https://github.com/InternRobotics/InternVLA-M1) |
+| **Galaxea G0** | 2025-09 | Galaxea | Dual-system: VLM planner + VLA executor | Three-stage curriculum (cross-embodiment → single → task) | — | ✓ | [Paper](https://arxiv.org/abs/2509.00576) / [Code](https://github.com/OpenGalaxea/GalaxeaVLA) |
+| **EO-1** | 2025-08 | EO-Robotics / IPEC | Interleaved vision-text-action pretraining | Autoregressive decoding + flow-matching denoising | 3B | ✓ | [Paper](https://arxiv.org/abs/2508.21112) / [Code](https://github.com/IPEC-PUBLIC/EO-1) |
 | **MolmoAct** | 2025-08 | Allen AI (AI2) | Molmo VLM | Action reasoning + chunked action tokens | 7B | ✓ | [Paper](https://arxiv.org/abs/2508.07917) / [Code](https://github.com/allenai/MolmoAct) |
 | **WorldVLA** | 2025-06 | Alibaba DAMO | Chameleon | Unified world-model + action autoregression | 7B | ✓ | [Paper](https://arxiv.org/abs/2506.21539) / [Code](https://github.com/alibaba-damo-academy/WorldVLA) |
 | **GR00T N1.5** | 2025-06 | NVIDIA | Eagle-2 VLM | DiT action head (improved post-training) | 2B | ✓ | [Code](https://github.com/NVIDIA/Isaac-GR00T) |
@@ -65,11 +76,16 @@ A list of published Vision-Language-Action models, grouped by openness first (�
 | **GO-1** | 2025-03 | AgiBot | InternVL backbone | Latent planner + action expert (ViLLA) | — | ◐ | [Site](https://agibot-world.com/blog/go1) / [Code](https://github.com/OpenDriveLab/AgiBot-World) |
 | **ProgVLA** | 2026-05 | Samsung / KU Leuven | Compact multimodal encoder | Progress-aware flow matching + RL heads | 0.1B | ✗ | [Paper](https://arxiv.org/abs/2605.28231) |
 | **X-DiffVLA** | 2026-05 | Peking Univ. et al. | VLA backbone | Cross-embodied diffusion action head | — | ✗ | [Paper](https://arxiv.org/abs/2605.25044) |
+| **π0.7** | 2026-04 | Physical Intelligence | π-series backbone | Flow matching + diverse context conditioning (steerable) | — | ✗ | [Paper](https://arxiv.org/abs/2604.15483) / [Site](https://www.pi.website/blog/pi07) |
 | **HEX** | 2026-04 | Tsinghua / Huawei et al. | VLM + proprioceptive experts | Flow-matching whole-body action head | — | ✗ | [Paper](https://arxiv.org/abs/2604.07993) |
+| **GR00T N2** | 2026-03 | NVIDIA | World action model (post-GR00T N1 architecture) | Joint video + action denoising (world-action paradigm) | — | ✗ | [Site](https://nvidianews.nvidia.com/news/nvidia-and-global-robotics-leaders-take-physical-ai-to-the-real-world) |
 | **MMaDA-VLA** | 2026-03 | DAMO / Zhejiang Univ. et al. | MMaDA diffusion backbone | Native discrete diffusion over language/image/action tokens | — | ✗ | [Paper](https://arxiv.org/abs/2603.25406) |
 | **DAM-VLA** | 2026-03 | Yonsei Univ. et al. | VLM reasoning module | Routed dynamic diffusion action models | — | ✗ | [Paper](https://arxiv.org/abs/2603.00926) |
+| **π*0.6 (Pi-Star 0.6)** | 2025-11 | Physical Intelligence | π0.6 backbone | RECAP: advantage-conditioned RL with experience + corrections | — | ✗ | [Paper](https://arxiv.org/abs/2511.14759) / [Site](https://www.pi.website/blog/pistar06) |
 | **X-VLA** | 2025-10 | Tsinghua AIR et al. | Soft-prompted Transformer | Flow-matching cross-embodiment action head | 0.9B | ✗ | [Paper](https://arxiv.org/abs/2510.10274) / [Site](https://thu-air-dream.github.io/X-VLA/) |
+| **Gemini Robotics 1.5 / ER 1.5** | 2025-09 | Google DeepMind | Gemini | Thinking VLA + embodied-reasoning planner, cross-embodiment (ER 1.5 via API) | — | ✗ | [Site](https://deepmind.google/blog/gemini-robotics-15-brings-ai-agents-into-the-physical-world/) |
 | **Discrete Diffusion VLA** | 2025-08 | Shanghai AI Lab et al. | Single Transformer VLM | Discrete diffusion action decoder | — | ✗ | [Paper](https://arxiv.org/abs/2508.20072) |
+| **GR-3** | 2025-07 | ByteDance Seed | Mixture-of-Transformers (VL + action modules) | End-to-end action generation, co-trained with web VL data | 4B | ✗ | [Paper](https://arxiv.org/abs/2507.15493) / [Site](https://seed.bytedance.com/en/blog/seed-research-gr-3-released-a-generalist-robot-model-for-generalization-long-horizon-tasks-and-bi-manual-deformable-object-manipulation) |
 | **Gemini Robotics On-Device** | 2025-06 | Google DeepMind | Gemini Nano family | On-device action decoder | — | ✗ | [Site](https://deepmind.google/discover/blog/gemini-robotics-on-device-brings-ai-to-local-robotic-devices/) |
 | **π0.5** | 2025-04 | Physical Intelligence | π0 + open-world co-training | Flow matching, generalizes to unseen homes | 3B | ✗ | [Paper](https://arxiv.org/abs/2504.16054) / [Site](https://www.physicalintelligence.company/blog/pi05) |
 | **Gemini Robotics** | 2025-03 | Google DeepMind | Gemini 2.0 | Action decoder (closed) | — | ✗ | [Paper](https://arxiv.org/abs/2503.20020) / [Site](https://deepmind.google/discover/blog/gemini-robotics-brings-ai-into-the-physical-world/) |
@@ -85,6 +101,10 @@ A list of published Vision-Language-Action models, grouped by openness first (�
 
 | Benchmark | Year | Simulator | Tasks | Key Focus | Links |
 |-----------|------|-----------|-------|-----------|-------|
+| **ReflexBench** | 2026 | - | Reaction-critical tasks | Fast/predictive manipulation under dynamic disturbances | [Paper](https://arxiv.org/abs/2608.14379) |
+| **RoboDojo** | 2026 | Isaac Sim | 42 sim + 18 real tasks | Unified sim-and-real; generalization, memory, precision, long-horizon, open-vocab; 30-policy leaderboard | [Paper](https://arxiv.org/abs/2607.04434) / [Code](https://github.com/RoboDojo-Benchmark/RoboDojo) / [Site](https://robodojo-benchmark.com/) |
+| **EBench** | 2026 | Isaac Sim | 26 tasks | Elemental diagnosis: 5 capability x 4 generalization dimensions | [Paper](https://arxiv.org/abs/2606.18239) / [Code](https://github.com/InternRobotics/EBench) |
+| **MolmoSpaces** | 2026 | Simulator-agnostic (MuJoCo / Isaac / ManiSkill) | 230K+ envs, 130K assets, 48K manipulable objects | Large-scale open ecosystem + public leaderboard, strong sim-to-real correlation | [Paper](https://arxiv.org/abs/2602.11337) / [Site](https://allenai.github.io/molmospaces/) / [Leaderboard](https://molmospaces.allen.ai/leaderboard) |
 | **DOMINO** | 2026 | - | 35 tasks, 110K+ trajs | Dynamic manipulation generalization | [Paper](https://arxiv.org/abs/2603.15620) / [Code](https://github.com/H-EmbodVis/DOMINO) |
 | **LiLo-VLA (LIBERO-Long++ / Ultra-Long)** | 2026 | robosuite | 21 tasks | Compositional long-horizon manipulation with object-centric linking | [Paper](https://arxiv.org/abs/2602.21531) |
 | **InstructVLA** | 2026 | - | Instruction-tuning suite | Instruction tuning from understanding to manipulation (ICLR 2026) | [Code](https://github.com/InternRobotics/InstructVLA) |
@@ -98,6 +118,7 @@ A list of published Vision-Language-Action models, grouped by openness first (�
 | **ClevrSkills** | 2024 | ManiSkill2 | 33 tasks, 330K trajs | Compositional reasoning | [Paper](https://arxiv.org/abs/2404.09187) |
 | **RoboCasa** | 2024 | robosuite | 100-365 tasks | Kitchen tasks, generalist robots | [Paper](https://arxiv.org/abs/2406.02523) / [Code](https://github.com/robocasa/robocasa) |
 | **BiGym** | 2024 | MuJoCo | 40 tasks | Bimanual mobile manipulation | [Paper](https://arxiv.org/abs/2407.07788) / [Code](https://github.com/chernyadev/bigym) |
+| **RoboTwin 2.0** | 2025 | - | 50 dual-arm tasks, 5 embodiments, 731 objects | Scalable data generator + benchmark, 5-axis domain randomization | [Paper](https://arxiv.org/abs/2506.18088) / [Code](https://github.com/RoboTwin-Platform/RoboTwin) |
 | **RoboTwin** | 2024 | - | 50 tasks, 5 embodiments | Dual-arm with generative digital twins | [Paper](https://arxiv.org/abs/2409.02920) / [Code](https://github.com/RoboTwin-Platform/RoboTwin) |
 | **LIBERO** | 2023 | robosuite | 130 tasks, 4 suites | Lifelong learning, knowledge transfer | [Paper](https://arxiv.org/abs/2306.03310) / [Code](https://github.com/Lifelong-Robot-Learning/LIBERO) |
 | **VIMA** | 2023 | PyBullet | 17 task types, 600K+ trajs | Multimodal prompt-conditioned | [Paper](https://arxiv.org/abs/2210.03094) / [Code](https://github.com/vimalabs/VimaBench) |
@@ -127,7 +148,8 @@ A list of published Vision-Language-Action models, grouped by openness first (�
 
 | Benchmark | Year | Simulator | Tasks | Key Focus | Links |
 |-----------|------|-----------|-------|-----------|-------|
-| **SIMPLE** (Psi-0) | 2026 | MuJoCo + Isaac Sim | 6+ loco-manip tasks | Open humanoid VLA benchmarking simulator | [Paper](https://arxiv.org/abs/2603.12263) / [Code](https://github.com/physical-superintelligence-lab/Psi0) |
+| **SIMPLE** | 2026 | MuJoCo + Isaac Sim | 60 whole-body tasks, 50 scenes, 1000+ objects | Humanoid loco-manipulation policy learning & evaluation; benchmarks IL, VLA and world-action models with zero-shot sim-to-real transfer | [Paper](https://arxiv.org/abs/2606.08278) |
+| **WOLF-VLA** | 2026 | - | Instruction-driven locomotion suite | Dynamically consistent whole-body humanoid locomotion VLA benchmark | [Paper](https://arxiv.org/abs/2606.25591) |
 | **LeVERB** | 2025 | Isaac Lab | 150+ tasks, 10 categories | Vision-language humanoid whole-body control | [Paper](https://arxiv.org/abs/2506.13751) |
 | **Ego Humanoid Manipulation** | 2025 | Isaac Lab | 12 tasks | Egocentric vision humanoid manipulation | [Code](https://github.com/quincy-u/Ego_Humanoid_Manipulation_Benchmark) |
 | **HumanoidGen (HGen-Bench)** | 2025 | SAPIEN | 20 tasks | LLM-driven bimanual dexterous task generation | [Paper](https://arxiv.org/abs/2507.00833) / [Code](https://github.com/TeleHuman/HumanoidGen) |
@@ -157,6 +179,8 @@ A list of published Vision-Language-Action models, grouped by openness first (�
 
 | Benchmark | Year | Approach | Key Focus | Links |
 |-----------|------|----------|-----------|-------|
+| **ArmnetBench v0.1** | 2026 | Low-cost real arm farm | Parallel real-world policy evaluation | [Paper](https://arxiv.org/abs/2607.24481) |
+| **VLA-REPLICA** | 2026 | Reproducible real-world rig | Off-the-shelf hardware, in-distribution + OOD evaluation replicable across labs | [Paper](https://arxiv.org/abs/2605.20774) |
 | **REALM** | 2025 | Real-validated sim | 15 perturbation factors, p<0.001 correlation | [Paper](https://arxiv.org/abs/2502.02538) / [Code](https://github.com/martin-sedlacek/REALM) |
 | **RobotArena Infinity** | 2025 | Real-to-sim translation | VLM scoring + human preferences | [Paper](https://arxiv.org/abs/2504.04603) / [Site](https://robotarenainf.github.io/) |
 | **RoboArena** | 2025 | Distributed real eval | Crowd-sourced ELO-style rankings | [Paper](https://arxiv.org/abs/2504.08659) |
@@ -178,12 +202,15 @@ A list of published Vision-Language-Action models, grouped by openness first (�
 
 | Benchmark | Year | Extends | Key Focus | Links |
 |-----------|------|---------|-----------|-------|
+| **ReaLM (Red-Teaming)** | 2026 | Physical-world VLMs | Unified red-teaming: 12 attack methods, 3 defenses, 13 VLMs | [Paper](https://arxiv.org/abs/2606.23892) |
+| **RedVLA** | 2026 | Multiple | Physical red teaming on real VLA-controlled robots; ASR up to 95.5% on 6 VLAs | [Paper](https://arxiv.org/abs/2604.22591) |
 | **LIBERO-X** | 2026 | LIBERO | Hierarchical robustness litmus test | - |
 | **LIBERO-Para** | 2026 | LIBERO | Paraphrase robustness (22-52% degradation) | - |
 | **RoboMME** | 2026 | Custom | Memory-augmented VLA evaluation | [Code](https://github.com/RoboMME/robomme_benchmark) |
 | **RoboCasa-Safety (via OmniGuide)** | 2026 | RoboCasa | Safety-rate protocol (no collision with static furniture) + 3D SDF guidance | [Paper](https://arxiv.org/abs/2603.10052) / [Site](https://omniguide.github.io/) |
 | **Linguistic Red-Team** | 2026 | Multiple | Diversity-aware adversarial instructions (SR 93% → 5.85%) | [Paper](https://arxiv.org/abs/2604.05595) |
 | **VLSA / AEGIS** | 2026 | Plug-in | Plug-and-play CBF safety-constraint layer with theoretical guarantees | [Paper](https://arxiv.org/abs/2512.11891) |
+| **AttackVLA** | 2025 | Multiple | Adversarial + backdoor attack benchmark across the VLA lifecycle; introduces BackdoorVLA | [Paper](https://arxiv.org/abs/2511.12149) |
 | **LIBERO-PRO** | 2025 | LIBERO | Robustness under 4-dim perturbations | [Paper](https://arxiv.org/abs/2502.18985) / [Code](https://github.com/Zxy-MLlab/LIBERO-PRO) |
 | **LIBERO-Plus** | 2025 | LIBERO | 7-dim x 5-level robustness analysis | [Paper](https://arxiv.org/abs/2503.16064) / [Code](https://github.com/sylvestf/LIBERO-plus) |
 | **SimX-OR** | 2025 | Plug-in | Observational robustness (blur, noise, etc.) | [Paper](https://arxiv.org/abs/2504.12453) / [Code](https://github.com/LiHaoHN/SimX-OR) |
@@ -195,6 +222,7 @@ A list of published Vision-Language-Action models, grouped by openness first (�
 
 | Platform | Year | Key Focus | Links |
 |----------|------|-----------|-------|
+| **StarVLA** | 2026 | Lego-like codebase spanning LIBERO, SimplerEnv, RoboTwin 2.0, RoboCasa GR1, BEHAVIOR-1K | [Paper](https://arxiv.org/abs/2604.05014) |
 | **RoboVerse** | 2025 | Cross-simulator unified platform (MetaSim) | [Paper](https://arxiv.org/abs/2504.09837) / [Code](https://github.com/RoboVerseOrg/RoboVerse) |
 | **STAR-Gen** | 2025 | Generalization taxonomy (visual, semantic, behavioral) | [Paper](https://arxiv.org/abs/2503.11106) / [Site](https://stargen-taxonomy.github.io/) |
 
@@ -206,6 +234,11 @@ A list of published Vision-Language-Action models, grouped by openness first (�
 - **"A Survey on Efficient Vision-Language-Action Models"** - [Paper](https://arxiv.org/abs/2510.24795) / [Site](https://evla-survey.github.io/)
 - **"A Survey on Vision-Language-Action Models: An Action Tokenization Perspective"** - [Paper](https://arxiv.org/abs/2507.01925)
 - **"Benchmarking the Generality of Vision-Language-Action Models"** - [Paper](https://arxiv.org/abs/2512.11315)
+- **"Vision-Language-Action in Robotics: A Survey of Datasets, Benchmarks, and Data Engines"** - [Paper](https://arxiv.org/abs/2604.23001)
+- **"Vision-Language-Action Safety: Threats, Challenges, Evaluations, and Mechanisms"** - [Paper](https://arxiv.org/abs/2604.23775)
+- **"Safety in Embodied AI: A Survey of Risks, Attacks, and Defenses"** - [Paper](https://arxiv.org/abs/2605.02900)
+- **"Efficient Vision-Language-Action Models for Embodied Manipulation: A Systematic Survey"** - [Paper](https://arxiv.org/abs/2510.17111)
+- **"An Anatomy of Vision-Language-Action Models: From Modules to Milestones and Challenges"** - [Paper](https://arxiv.org/abs/2512.11362)
 
 ## Related Awesome Lists
 
